@@ -1,0 +1,34 @@
+<import src="/template/movie-list/movie-list-template.wxml"/>
+<import src="/template/movie-grid/movie-grid-template.wxml"/>
+
+<view class="search">
+    <icon type="search" class="search-img" size="13" color="#405f80" />
+    <input type="text" 
+        value="{{searchValue}}"
+        placeholder="血战钢锯岭、你的名字"
+        placeholder-class="placeholder" 
+        bindfocus="onBindFocus" 
+        bindblur="onBindBlur"
+    />
+    <icon type="clear" class="xx-img" size="18" 
+        wx:if="{{searchPanelShow}}"
+        bindtap="onCancelTap"
+    />
+</view>
+<view class="container" wx:if="{{containerShow}}">
+    <view class="movies-template">
+        <template is="movieListTemplate" data="{{...in_theaters}}"></template>
+    </view>
+
+    <view class="movies-template">
+        <template is="movieListTemplate" data="{{...coming_soon}}"></template>
+    </view>
+
+    <view class="movies-template">
+        <template is="movieListTemplate" data="{{...top250}}"></template>
+    </view>
+</view>
+
+<view class="search-panel" wx:if="{{searchPanelShow}}">
+    <template is="movieGridTemplate" data="{{...searchResult}}"></template>
+</view>

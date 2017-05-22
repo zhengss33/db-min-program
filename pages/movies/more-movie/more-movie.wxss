@@ -1,0 +1,13 @@
+/* pages/movies/more-movie/more-movie.wxss */
+
+@import '/template/movie-grid/movie-grid-template.wxss';
+
+.end {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.endtxt {
+  color: #666;
+  font-size: 22rpx;
+}
